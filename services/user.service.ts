@@ -11,8 +11,7 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = `*`;
 axios.defaults.headers.common[
   'Accept'
 ] = `application/json, text/plain, application/graphql, */*`;
-
-export async function authLogin({ email, password }: LoginDetails) {
+export const authLogin = async ({ email, password }: LoginDetails) =>{
   let response = await axios.post(GLOBALHELPER.DEVURL, {
     query: `mutation(
                 $email:String!, 
